@@ -1,0 +1,133 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}Invoice{% endblock %}
+{% block css %}
+<style>
+    .history {
+        color: blue !important;
+        box-shadow: 0px 1px 11px white;
+    }
+
+    #clearcart, #popcart {
+        display: none;
+    }
+</style>
+{% endblock%}
+{% block body %}
+<div class="container my-3">
+    <div class="container  text-white">
+        {% for i in order%}
+        <div class="row ">
+            <div class="col">
+                <div>
+                    <h1 class="text-center fw-bolder text-decoration-underline my-3 ">Order Detail</h1>
+                    <div class="fw-bolder">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-auto">Order_id:</div>
+                                    <div class="col-auto">{{i.order_unique_id}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2 d-flex justify-content-center">
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-auto">Order_Date:</div>
+                                    <div class="col-auto">{{i.timestamp}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-auto">Order_Amount:</div>
+                                    <div class="col-auto">{{i.amount}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center ">
+                <div>
+                    <h1 class="fw-bolder my-3 text-decoration-underline ">Personal Info </h1>
+                    <div class="fw-bolder text-center">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-4 text-center">
+                                <div class="row">
+                                    <div class="col-auto">Name:</div>
+                                    <div class="col-auto">{{i.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2 d-flex justify-content-center">
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-auto">Phone No:</div>
+                                    <div class="col-auto">{{i.phone}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-auto">Email:</div>
+                                    <div class="col-auto">{{i.email}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-2 d-flex justify-content-center">
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-auto">Address:</div>
+                                    <div class="col-auto">{{i.address}},{{i.city}},{{i.state}},{{i.zip_code}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 class="fw-bolder my-5 text-decoration-underline text-center">Item List</h1>
+            <div class="container px-5">
+                <div>
+                    <table class="table text-white mb-5 ">
+                        <thead>
+                        <tr class="text-center">
+                            <th scope="col">Name</th>
+                            <th scope="col">QTY</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for key,value in data.items%}
+                        <tr class="text-center">
+                            <td>{{value.name}}</td>
+                            <td>{{value.qty}}</td>
+                            <td>{{value.price}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+</div>
+<div class="text-center">
+    <a class="btn btn-primary fs-3 " href="/shop/pdf/{{id}}">Download Invoice</a>
+
+</div>
+
+
+{% endblock%}
+{% block js%}
+<script>
+
+
+</script>
+{% endblock%}

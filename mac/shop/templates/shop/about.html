@@ -1,0 +1,82 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} About Us{% endblock %}
+{% block css %}
+<style>
+
+    .about {
+        color: blue!important;
+        box-shadow:0px 1px 11px white;
+    }
+    #clearcart,#popcart{
+        display: none;
+    }
+</style>
+
+{% endblock %}
+{% block body%}
+
+
+<main>
+    <div class="container py-4">
+
+        <div class="py-5 mb-4 bg-black rounded-3 text-white">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">MY SHOPPING..</h1>
+                <p class=" fs-4">Welcome to My Awesome Cart, your one-stop online shopping destination for Electronics
+                    and Fashion ware . Our website offers a wide variety of products from top brands and
+                    reputable sellers at competitive prices.
+
+                    With our user-friendly interface and comprehensive search options, you can easily find what you're
+                    looking for and browse through our extensive collection of products. We are committed to providing
+                    you with a hassle-free shopping experience, whether you're looking to purchase phone or
+                    need assistance with an order.
+
+                    In addition to our diverse product selection, we also offer free shipping on orders over a certain
+                    amount, easy returns and exchanges, and exceptional customer support. Our team is dedicated to
+                    ensuring that every customer is satisfied with their purchase and has a positive experience shopping
+                    with us.
+
+                    Thank you for choosing My Awesome Cart as your go-to destination for online shopping. Start browsing
+                    our selection today and see why so many customers choose us for their product needs.</p>
+                <a href="/shop/contact/">
+                    <button class="btn btn-primary btn-lg" type="button">know more..</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Electronics</h2>
+                    <p>At our electronic shopping website, we believe that quality should not come at a premium price.
+                        That's why we strive to provide you with high-quality electronic products at affordable prices.
+                        We work closely with top electronic brands and suppliers to bring you the latest and greatest
+                        products on the market.</p>
+                    <a href="/shop">
+                        <button class="btn btn-outline-light" type="button">Go for shopping</button>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Fashion</h2>
+                    <p>Our website is designed to be easy to use, with a wide variety of fashion products to choose
+                        from. Whether you are looking for casual wear, formal attire, or anything in between, we have
+                        got you covered. We pride ourselves on staying up-to-date with the latest fashion trends, so you
+                        can always look and feel your best.</p>
+                    <a href="/shop">
+                        <button class="btn btn-outline-light" type="button">Go for shopping</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-3 mt-4  border-top text-white">
+            &copy; 2023
+        </footer>
+    </div>
+</main>
+
+
+{% endblock %}

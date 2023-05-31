@@ -1,0 +1,414 @@
+
+body {
+    background-color: black;
+}
+
+.navbar {
+    border-bottom: 2px white solid;
+}
+
+.title {
+    text-shadow: 3px 3px blue;
+}
+
+::placeholder {
+    color: white !important;
+}
+
+input, textarea {
+    background-color: black !important;
+    color: white !important;
+}
+
+
+#popcart:hover, #clearcart:hover {
+    color: white;
+!important;
+    background-color: black !important;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0px 0px 17px white !important;
+    border: none !important;
+}
+
+.btn:hover {
+    background-color: black !important;
+    color: white !important;
+    box-shadow: 0px 0px 17px blue !important
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 10% !important;
+}
+
+.card-body {
+    text-align: center !important;
+}
+
+img.item_img {
+    width: 100%;
+    height: 250px;
+}
+
+.carousel-indicators {
+    position: relative;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: black;
+
+}
+
+.poster {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 1400px) {
+}
+
+
+/*tablets*/
+/*ipad_pro*/
+@media only screen and (max-width: 1025px) {
+    /*home_page*/
+    .scroll {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .card-title {
+        font-size: large;
+    }
+
+    .card-text {
+        font-size: small;
+    }
+
+    .card-body {
+        padding: 0;
+    }
+
+    .add_to_cart, .view {
+        font-size: small;
+    }
+
+    /*blog*/
+    .intro {
+        font-size: 15px;
+    }
+
+    .blog_title {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 1367px) and (orientation: landscape) {
+    /*blog*/
+    .intro {
+        font-size: 17px;
+    }
+}
+
+/*nest hub*/
+@media only screen and (max-width: 1280px) {
+}
+
+
+/*ipad air*/
+@media only screen and (max-width: 821px) {
+    .item_img {
+        height: 150px !important;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    /*blog*/
+    .poster {
+        margin-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 1180px) and (orientation: landscape) {
+
+    .cart {
+        width: auto !important;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    /*    blog*/
+    .intro {
+        font-size: 16px;
+    }
+}
+
+/*ipad min*/
+@media only screen and (max-width: 769px) {
+    .carousel-control-next, .carousel-control-prev {
+        width: 5% !important;
+    }
+
+}
+
+@media only screen and (max-width: 1025px) and (orientation: landscape) {
+    /*blog*/
+    .intro {
+        font-size: 14px;
+    }
+}
+
+
+/*mobiles*/
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+}
+
+
+/*fold open*/
+@media only screen and (max-width: 512px) and (max-height: 718px) {
+    .col-3 {
+        width: 50% !important;
+        margin-top: 2%;
+    }
+
+    .scroll {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 718px) and (orientation: landscape) {
+    .col-3 {
+        width: 50% !important;
+        margin-top: 2%;
+    }
+
+    .scroll {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/*iphone 14 pro max*/
+@media only screen and (max-width: 431px) and (max-height: 932px) {
+    .col-3 {
+        width: 50% !important;
+        margin-top: 2%;
+    }
+
+    .scroll {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+}
+
+@media only screen and (max-width: 932px) and  (orientation: landscape) {
+    img.item_img {
+        width: 100%;
+        height: 160px;
+    }
+
+    .scroll {
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    /*blog*/
+    .card-text {
+        font-size: 14px;
+    }
+}
+
+/*iphone 13 pro max*/
+@media only screen and (max-width: 429px) and (max-height: 927px) {
+    /*blog*/
+    .intro {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 927px) and  (orientation: landscape) {
+
+}
+
+/*s20 ultra and A51/71*/
+@media only screen and (max-width: 413px) and (max-height: 916px) {
+    /*blog*/
+    .intro {
+        font-size: 13px;
+    }
+
+    .blog_name {
+        font-size: 23px;
+    }
+
+    .blog_title {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 916px) and  (orientation: landscape) {
+}
+
+/*iphone_XR  and iphone_11*/
+@media only screen and (max-width: 415px) and (max-height: 897px) {
+    /*    blog*/
+    .intro {
+        font-size: 13px;
+    }
+
+    .blog_name {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 897px) and  (orientation: landscape) {
+}
+
+/*pixel 5*/
+@media only screen and (max-width: 394px) and (max-height: 852px) {
+    /*blog*/
+    .blog_name {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 852px) and  (orientation: landscape) {
+}
+
+/*iphone_13 and iphone_12pro and iphone_14*/
+@media only screen and (max-width: 391px) and (max-height: 845px) {
+    /*blog*/
+    .blog_name {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 845px) and (orientation: landscape) {
+    .carousel-control-next, .carousel-control-prev {
+        width: 5% !important;
+    }
+}
+
+/*S21 plush*/
+@media only screen and (max-width: 385px) and (max-height: 855px) {
+    /*blog*/
+    .blog_name {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 855px) and (orientation: landscape) {
+    .carousel-control-next, .carousel-control-prev {
+        width: 7% !important;
+    }
+}
+
+/*iphone_12 mini and iphone_13 mini*/
+@media only screen and (max-width: 376px) and (max-height: 814px) {
+    /*blog*/
+    .blog_name {
+        font-size: 17px;
+    }
+
+    .blog_title {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 814px) and (orientation: landscape) {
+    .carousel-control-next, .carousel-control-prev {
+        width: 4% !important;
+    }
+}
+
+/*S21*/
+@media only screen and (max-width: 361px) and (max-height: 801px) {
+    .blog_name {
+        font-size: 27px;
+    }
+}
+
+@media only screen and (max-width: 801px) and (orientation: landscape) {
+    .scroll {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+
+/*s8+*/
+@media only screen and (max-width: 361px) and (max-height: 741px) {
+}
+
+@media only screen and (max-width: 741px) and (orientation: landscape) {
+    .col-3 {
+        width: 50% !important;
+        margin-top: 2%;
+    }
+
+    .scroll {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .carousel-control-prev {
+        width: 10% !important;
+    }
+}
+
+/*iphone_SE */
+@media only screen and (max-width: 376px) and (max-height: 678px) {
+}
+
+@media only screen and (max-width: 678px) and (orientation: landscape) {
+}
+
+@media only screen and (max-width: 328px) {
+}
+
+/*fold*/
+@media only screen and (max-width: 281px) and (max-height: 654px) {
+    .item_img {
+        height: 115px !important;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 8px;
+    }
+
+    .add_to_cart, .view {
+        font-size: 10px;
+    }
+/*blog*/
+    .intro{
+        font-size: 11px;
+    }
+
+}
+
+@media only screen and (max-width: 654px) and (orientation: landscape) {
+}

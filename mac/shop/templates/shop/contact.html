@@ -1,0 +1,58 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}Contact Us{% endblock %}
+{% block css %}
+<style>
+
+    .contact {
+        color: blue!important;
+        box-shadow:0px 1px 11px white;
+    }
+
+    #clearcart,#popcart{
+        display: none;
+    }
+
+</style>
+
+{% endblock %}
+{% block body%}
+<div class="container text-white">
+    <h1> Contact Us </h1>
+    <form class="row g-3 mt-4" action="/shop/contact/" method="post">{% csrf_token %}
+        <div class="col-12">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email"pattern="[a-z0-9]+@gmail\.com" required>
+        </div>
+        <div class="col-12">
+            <label for="number" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="number" name="phone"required>
+        </div>
+
+        <div class="col-12">
+            <label for="desc" class="form-label">How May We Help You</label>
+            <textarea type="text" class="form-control" rows="3" id="desc" name="desc"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+{%if thank%}
+    Swal.fire({
+        icon: 'success',
+        title: "Thank you for showing your interest with us....",
+        showConfirmButton: false,
+        timer: 5000
+    })
+{%endif%}
+</script>
+{% endblock%}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"
+          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>PDF</title>
+
+</head>
+<body>
+{% load static %}
+{% for i in order%}
+<table>
+    <tr>
+        <td style="color: red;font-size: xxx-large;text-align: center;"><b>Invoice</b></td>
+    </tr>
+</table>
+<hr style="color: black">
+<table style="margin-top: 35px">
+    <thead>
+    <tr>
+        <th style="font-size: x-large;padding: 5px"><u>Order Details</u></th>
+        <th style="font-size: x-large"><u> Personal Information</u></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align: center"><b>Order_id: {{i.order_unique_id}}</b></td>
+        <td style="text-align: center"><b>Name: {{i.name}}</b></td>
+
+    </tr>
+    <tr>
+        <td style="text-align: center"><b>Order_Date: {{i.timestamp}}</b></td>
+        <td style="text-align: center"><b>Phone: {{i.phone}}</b></td>
+    </tr>
+    <tr>
+        <td style="text-align: center"><b>Order_Amount: {{i.amount}}</b></td>
+        <td style="text-align: center"><b>Email: {{i.email}}</b></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="text-align: center"><b>Address: {{i.address}},{{i.city}},{{i.state}},{{i.zip_code}}</b></td>
+    </tr>
+    </tbody>
+</table>
+<h1 style="text-align: center"><b>Item List</b></h1>
+<table style=" border: 1px double black">
+    <thead>
+    <tr>
+        <th style="font-size: x-large;padding-top: 2px">Name
+        </th>
+        <th style="font-size: x-large;padding-top: 2px">Qty
+        </th>
+        <th style="font-size: x-large;padding-top: 2px">Price
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for key,value in data.items%}
+    <tr style="text-align: center">
+        <td style="padding:1px">{{value.name}}</td>
+        <td style="padding:1px">{{value.qty}}</td>
+        <td style="padding:1px">{{value.price}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<table style="margin-top: 5px">
+    <tr style="text-align: center">
+        <td colspan="3" style="padding-top:1px;font-size: 20px"><b>Total: {{sum}}</b></td>
+    </tr>
+</table>
+{% endfor%}
+Thank you for visiting our site and thanks for taking trust on our service.
+
+
+</body>
+</html>
+

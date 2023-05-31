@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"
+          integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel='stylesheet' href="{% static 'css/index.css' %}">
+
+    <title>New_user</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+
+    .form-label {
+        font-size: large;
+    }
+</style>
+<body>
+<div class="text-white fs-1 text-center fw-bolder mt-5" style="text-shadow: 2px 2px 2px blue">Fill This Form For
+    Creating Account With Us.
+</div>
+<div class="container mt-5" style="background-color: #6d6d6d0a">
+    <form class="row g-3 text-white" method='post' action="" id="form">{% csrf_token %}
+        <div class="col-md-6">
+            <label for="firstname" class="form-label">Fisrt Name:</label>
+            <input type="text" class="form-control" id="firstname" name="firstname">
+        </div>
+        <div class="col-md-6">
+            <label for="lastname" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" id="lastname" name="lastname">
+        </div>
+        <div class="col-md-12">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="col-md-6">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" class="form-control" id="password" name="password">
+        </div>
+        <div class="col-md-6">
+            <label for="repeatpassword" class="form-label">Repeat Password:</label>
+            <input type="text" class="form-control" id="repeatpassword" name="repeatpassword">
+
+        </div>
+
+
+        <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary fs-4 " id="submit">Sign in</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    $('#submit').click(function () {
+        var pass = $('#password').val()
+        var R_P = $('#repeatpassword').val()
+        console.log(pass)
+        console.log(R_P)
+        if (pass === R_P) {
+            alert("Account is created successfully")
+            $('#form').setAttribute('action', '/shop/create_user/')
+        } else {
+            alert("Password must same with Repeat Password..")
+            $('#form').setAttribute('action', '#')
+        }
+    });
+
+
+</script>
+</body>
+</html>

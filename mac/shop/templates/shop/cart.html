@@ -1,0 +1,61 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}Cart{% endblock %}
+{% block css%}
+<style>
+    #popcart {
+        box-shadow: 0px 0px 25px 3px red !important;
+        color: red !important;
+
+    }
+</style>
+{% endblock %}
+{% block body%}
+{% load static %}
+{%if user.is_authenticated%}
+<div class="container text-white">
+    <div class="col my-4">
+        <h2 class="mb-4">Your items in Cart</h2>
+        <ol class="list-group list-group-numbered">
+            {%for i in list%}
+            <li class="list-group-item d-flex justify-content-between align-items-start  bg-black text-white">
+                <div class="ms-2 me-auto">
+                    {{ i.name}}
+                </div>
+                <span class="me-3">  price:{{i.price}}</span>
+                <span class="badge bg-primary rounded-pill">{{i.qty}}</span>
+                <span></span>
+
+            </li>
+            {%endfor%}
+        </ol>
+        <ol class="list-group my-3">
+            <li class="list-group-item d-flex justify-content-between align-items-start  bg-black text-white">
+                <div class="ms-2 me-auto">
+                    Total price of items:
+                </div>
+                <span class="me-3" id="totalprice">{{total}}</span>
+                <span class="badge bg-primary rounded-pill"><span id="totalnumber">{{total_item}}</span></span>
+            </li>
+
+        </ol>
+    </div>
+    <div class="text-center"><a href="/shop/checkout" class="btn btn-primary">Check Out</a></div>
+</div>
+{%else%}
+<h1>
+    <a href="/shop/">Please Login For Order Something....</a>
+</h1>
+
+{%endif%}
+
+
+{% endblock %}
+{% block js%}
+<script>
+    document.getElementById('cart').innerHTML = {
+    {item_num
+    }}
+    ;
+</script>
+{% endblock %}

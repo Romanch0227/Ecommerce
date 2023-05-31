@@ -1,0 +1,50 @@
+{% extends 'shop/basic.html' %}
+{% block title%}Blog{% endblock %}
+{% block css %}
+<style>
+    .blog {
+        color: blue !important;
+        box-shadow: 0px 1px 11px white;
+    }
+
+    #clearcart, #popcart {
+        display: none;
+    }
+</style>
+{% endblock %}
+{% block body%}
+<body>
+<div class="container text-white mt-3">
+
+
+    <div class="row my-5">
+        {% for item in mypost%}
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary "><h2 class="blog_name">{{item.title}}</h2></strong>
+                    <h3 class="mb-0 blog_title"> {{item.head0}}</h3>
+                    <div class="mb-1 text-white">{{item.date}}</div>
+                    <p class="card-text mb-auto intro ">{{item.contenthead0}}</p>
+                    <a href="/blog/POST/{{item.post_id}}" class="stretched-link">Continue reading</a>
+                </div>
+                <div class="col  poster">
+                    <img src="/media/{{item.image}}" width="200px" height="200px">
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+    </div>
+    <div class="row my-5">
+        {%endif%}
+        {%endfor%}
+    </div>
+</div>
+</body>
+{% endblock %}
+{%block j%}
+<script>
+
+</script>
+{%endblock%}
+

@@ -1,0 +1,127 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%}History{% endblock %}
+{% block css %}
+<style>
+    .history {
+        color: blue !important;
+        box-shadow: 0px 1px 11px white;
+    }
+
+    #clearcart, #popcart {
+        display: none;
+    }
+</style>
+{% endblock %}
+{% block body %}
+
+<div class="container my-5">
+    <div class="container">
+        <table class="table text-white">
+            <thead>
+            <tr>
+                <th scope="col" class="text-center"><h1>Order_id</h1></th>
+                <th scope="col" class="text-center"><h1>Placed On..</h1></th>
+                <th scope="col" class="text-center"><h1>Total Amount</h1></th>
+                <th scope="col" class="text-center"><h1>Invoice</h1></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in order%}
+            <tr>
+
+                <td class="text-center">{{i.order_unique_id}}</td>
+                <td class="text-center">{{i.timestamp}}</td>
+                <td class="text-center">{{i.amount}}</td>
+                <td class="text-center"><a href="/shop/invoice/{{i.order_unique_id}}">Detailed Invoice</a></td>
+
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!--<table class="table">-->
+<!--    <thead>-->
+<!--    <tr class="text-white text-center fw-bolder fs-2">-->
+<!--        <th>-->
+<!--            street-->
+<!--        </th>-->
+<!--        <th>-->
+<!--            lat-->
+<!--        </th>-->
+<!--        <th>-->
+<!--            lang-->
+<!--        </th>-->
+<!--        <th>-->
+<!--            click-->
+<!--        </th>-->
+<!--        <th>-->
+<!--            Address-->
+<!--        </th>-->
+<!--    </tr>-->
+
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    {%for item in api_table%}-->
+<!--    <tr class="text-white text-center fs-5">-->
+<!--        <form>-->
+<!--            <td>-->
+<!--                <span id="street">{{item.street}}</span>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span id="lat_{{ item.api_id }}">{{item.lat}}</span>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span id="lng_{{ item.api_id }}">{{item.lng}}</span>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <a data-id="{{ item.api_id }}" class="btn btn-primary address">Click</a>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span id="address_{{ item.api_id }}"></span>-->
+
+<!--            </td>-->
+<!--        </form>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--    </tbody>-->
+<!--</table>-->
+
+
+{% endblock%}
+
+{% block js %}
+<!--<script>-->
+<!--    $('.address').click(function () {-->
+<!--        var id = $(this).data('id');-->
+<!--        var formdata = {-->
+<!--            'id': id,-->
+<!--            'lat': $('#lat_' + id).text(),-->
+<!--            'lng': $('#lng_' + id).text(),-->
+
+<!--            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()-->
+
+<!--        };-->
+<!--        $.ajax({-->
+<!--            type: 'POST',-->
+<!--            url: '/shop/history/',-->
+<!--            data: formdata,-->
+<!--            encode: true,-->
+<!--            success: function (demo) {-->
+
+<!--                var CITY = demo-->
+<!--                $('#address_' + id).html(CITY)-->
+
+<!--            }-->
+<!--        });-->
+
+<!--    })-->
+
+
+<!--</script>-->
+{% endblock %}
